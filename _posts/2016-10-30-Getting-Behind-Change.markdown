@@ -2,7 +2,7 @@
 layout: post
 title:  "Getting Behind Change"
 date:   2016-10-30 13:44:15
-categories: Lessons Learned
+categories: LessonsLearned
 ---
 
 Change is hard. That is a true enough statement for individuals right? What about organizations though? Do they find change as hard? The answer is yes. Whether the organization is big or small, everyone struggles with change. Why is it though that we find change so hard? Is it delving into uncharted territory that scares us, or is it something else entirely? From my experience, change can be made easier by remembering a few important things:

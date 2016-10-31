@@ -1,0 +1,29 @@
+---
+layout: default
+title: Testing
+permalink: /testing/
+---
+
+<section id="one" >
+    <div class="container">
+      <header class="major">
+        <h2>Tutorials: Chef Things</h2>
+      </header>
+      {% assign testingPages = site.pages | where:"tutorial-category", "testing" %}
+      {% for page in testingPages %}
+      <article>
+        <header>
+          <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+        </header>
+                <section class="post-content">
+                    {{ post.excerpt }}
+                </section>
+                <section class="special">
+                    <ul class="actions">
+                        <li><a href="{{ page.url | prepend: full_base_url }}">{{ page.title | escape }}</a></li>
+                    </ul>
+                </section>
+            </article>
+        {% endfor %}
+    </div>
+</section>

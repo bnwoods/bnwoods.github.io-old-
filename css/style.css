@@ -35,7 +35,7 @@
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #4acaa8 !important;
+			color: #778fb2 !important;
 		}
 
 	strong, b {
@@ -195,7 +195,7 @@
 	}
 
 	header.major h2 {
-		color: #4acaa8;
+		color: #778fb2;
 		font-size: 3.5em;
 	}
 
@@ -259,7 +259,7 @@
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #4acaa8;
+			border-color: #778fb2;
 		}
 
 	.select-wrapper {
@@ -370,7 +370,7 @@
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #4acaa8;
+			border-color: #778fb2;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -562,7 +562,7 @@
 				}
 
 				ul.feature-icons li:before {
-					background: #4acaa8;
+					background: #778fb2;
 					border-radius: 100%;
 					color: #ffffff;
 					display: block;
@@ -851,7 +851,7 @@
 		input[type="reset"].special,
 		input[type="button"].special,
 		.button.special {
-			background-color: #4acaa8;
+			background-color: #778fb2;
 			color: #ffffff !important;
 		}
 
@@ -859,14 +859,14 @@
 			input[type="reset"].special:hover,
 			input[type="button"].special:hover,
 			.button.special:hover {
-				background-color: #5ed0b1;
+				background-color: #6b85ad;
 			}
 
 			input[type="submit"].special:active,
 			input[type="reset"].special:active,
 			input[type="button"].special:active,
 			.button.special:active {
-				background-color: #39c29d;
+				background-color: #6b85ad;
 			}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
@@ -932,8 +932,8 @@
 /* Header */
 
 	#header {
-		background: #4acaa8;
-		color: #d1f1e9;
+		background: #778fb2;
+		color: #7c94b7;
 		height: 100%;
 		position: fixed;
 		text-align: center;
@@ -951,11 +951,11 @@
 			}
 
 		#header header p {
-			color: #b6e9dc;
+			color: #7c94b7;
 		}
 
 		#header a {
-			color: #d1f1e9;
+			color: #8699b7;
 		}
 
 			#header a:hover {
@@ -1006,7 +1006,7 @@
 		}
 
 			#header > nav ul li {
-				border-top: solid 2px #5ccfb0;
+				border-top: solid 2px #8699b7;
 				display: block;
 				padding: 0;
 			}
@@ -1026,7 +1026,7 @@
 
 					#header > nav ul li a.active, #header > nav ul li .cc-active {
 						background: #fff;
-						color: #4acaa8 !important;
+						color: #778fb2 !important;
 					}
 
 				#header > nav ul li:first-child {
