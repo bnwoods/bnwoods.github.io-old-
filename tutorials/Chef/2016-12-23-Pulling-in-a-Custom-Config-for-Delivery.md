@@ -20,7 +20,7 @@ organization = "organization-name"
 pipeline = "master"
 server = "automateservername.domain.com"
 user = "username"
-config_json = "/Users/brittanywoods/chef-repo/.delivery/config.json"
+config_json = "/Users/username/chef-repo/.delivery/config.json"
 ```
 
 Now, next time you run `delivery init`, instead of using the default config.json you will now be pulling in your custom config.json file!
