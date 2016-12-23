@@ -11,14 +11,16 @@ I have put mine in my .delivery directory that houses my cli.toml. You can liter
 
 ##### Modify your cli.toml
 You will need to modify your cli.toml to point to your new config.json file. Mine looks something like this:
-``` toml
-  api_protocol = "https"
-  enterprise = "enterprise-name"
-  git_port = "8989"
-  organization = "organization-name"
-  pipeline = "master"
-  server = "automate-server-name.domain.com"
-  user = "your-user-name"
-  config_json = "/Users/usernamehere/chef-repo/.delivery/config.json"
+
 ```
+api_protocol = "https"
+enterprise = "enterpriseName"
+git_port = "8989"
+organization = "organization-name"
+pipeline = "master"
+server = "automateservername.domain.com"
+user = "username"
+config_json = "/Users/brittanywoods/chef-repo/.delivery/config.json"
+```
+
 Now, next time you run `delivery init`, instead of using the default config.json you will now be pulling in your custom config.json file!
