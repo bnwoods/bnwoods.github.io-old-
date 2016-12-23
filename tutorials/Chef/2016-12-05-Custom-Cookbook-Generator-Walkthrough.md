@@ -13,7 +13,7 @@ To use this and still be able to use delivery init, you'll want to add in either
 
 ### Step 1:
 Under `flavor_cookbooks/[yourcustomname]_base` you will need to add the following /directories/files if you're simply using a cookbook skeleton:
-```
+``` bash
 ├── flavor_cookbooks
 │   └── saucepan_base
 │       ├── files
@@ -51,6 +51,7 @@ Under `flavor_cookbooks/[yourcustomname]_base` you will need to add the followin
 │       │   │   │                       └── default.rb
 │       │   │   └── config.json
 ```
+
 For me, I am generating a skeleton build cookbook because I'm utilizing a custom config.json to call a custom build cookbook that is stored in version control. As long as this cookbook is called build_cookbook, `delivery init` will recognize that a build cookbook already exists and will not fail due to your generator.
 
 ### Step 2:
