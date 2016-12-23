@@ -15,42 +15,42 @@ To use this and still be able to use delivery init, you'll want to add in either
 Under `flavor_cookbooks/[yourcustomname]_base` you will need to add the following /directories/files if you're simply using a cookbook skeleton:
 
 ``` bash
-├── flavor_cookbooks
-│   └── saucepan_base
-│       ├── files
-│       │   ├── .delivery
-│       │   │   ├── build_cookbook
-│       │   │   │   ├── .kitchen.yml
-│       │   │   │   ├── Berksfile
-│       │   │   │   ├── LICENSE
-│       │   │   │   ├── README.md
-│       │   │   │   ├── chefignore
-│       │   │   │   ├── data_bags
-│       │   │   │   │   └── keys
-│       │   │   │   │       └── delivery_builder_keys.json
-│       │   │   │   ├── metadata.rb
-│       │   │   │   ├── recipes
-│       │   │   │   │   ├── default.rb
-│       │   │   │   │   ├── deploy.rb
-│       │   │   │   │   ├── functional.rb
-│       │   │   │   │   ├── lint.rb
-│       │   │   │   │   ├── provision.rb
-│       │   │   │   │   ├── publish.rb
-│       │   │   │   │   ├── quality.rb
-│       │   │   │   │   ├── security.rb
-│       │   │   │   │   ├── smoke.rb
-│       │   │   │   │   ├── syntax.rb
-│       │   │   │   │   └── unit.rb
-│       │   │   │   ├── secrets
-│       │   │   │   │   └── fakey-mcfakerton
-│       │   │   │   └── test
-│       │   │   │       └── fixtures
-│       │   │   │           └── cookbooks
-│       │   │   │               └── test
-│       │   │   │                   ├── metadata.rb
-│       │   │   │                   └── recipes
-│       │   │   │                       └── default.rb
-│       │   │   └── config.json
+  ├── flavor_cookbooks
+  │   └── saucepan_base
+  │       ├── files
+  │       │   ├── .delivery
+  │       │   │   ├── build_cookbook
+  │       │   │   │   ├── .kitchen.yml
+  │       │   │   │   ├── Berksfile
+  │       │   │   │   ├── LICENSE
+  │       │   │   │   ├── README.md
+  │       │   │   │   ├── chefignore
+  │       │   │   │   ├── data_bags
+  │       │   │   │   │   └── keys
+  │       │   │   │   │       └── delivery_builder_keys.json
+  │       │   │   │   ├── metadata.rb
+  │       │   │   │   ├── recipes
+  │       │   │   │   │   ├── default.rb
+  │       │   │   │   │   ├── deploy.rb
+  │       │   │   │   │   ├── functional.rb
+  │       │   │   │   │   ├── lint.rb
+  │       │   │   │   │   ├── provision.rb
+  │       │   │   │   │   ├── publish.rb
+  │       │   │   │   │   ├── quality.rb
+  │       │   │   │   │   ├── security.rb
+  │       │   │   │   │   ├── smoke.rb
+  │       │   │   │   │   ├── syntax.rb
+  │       │   │   │   │   └── unit.rb
+  │       │   │   │   ├── secrets
+  │       │   │   │   │   └── fakey-mcfakerton
+  │       │   │   │   └── test
+  │       │   │   │       └── fixtures
+  │       │   │   │           └── cookbooks
+  │       │   │   │               └── test
+  │       │   │   │                   ├── metadata.rb
+  │       │   │   │                   └── recipes
+  │       │   │   │                       └── default.rb
+  │       │   │   └── config.json
 ```
 
 
@@ -60,116 +60,116 @@ For me, I am generating a skeleton build cookbook because I'm utilizing a custom
 Next, you will need to update your cookbook.rb under `flavor_cookbooks/saucepan_base/recipes/cookbook.rb` to include all the files we've just added. Mine looks something like this (you will of course need to modify to fit your needs):
 
 ``` ruby
-context = ChefDK::Generator.context
-cookbook_dir = File.join(context.cookbook_root, context.cookbook_name)
-attribute_context = context.cookbook_name.gsub(/-/, '_')
+  context = ChefDK::Generator.context
+  cookbook_dir = File.join(context.cookbook_root, context.cookbook_name)
+  attribute_context = context.cookbook_name.gsub(/-/, '_')
 
-# Create cookbook directories
-cookbook_directories = [
-  'attributes',
-  'recipes',
-  'templates/default',
-  'test/integration/default',
-  '.delivery/build_cookbook',
-  '.delivery/build_cookbook/data_bags/keys',
-  '.delivery/build_cookbook/recipes',
-  '.delivery/build_cookbook/secrets'
-]
-cookbook_directories.each do |dir|
-  directory File.join(cookbook_dir, dir) do
-    recursive true
-  end
-end
-
-# Create basic files
-files_basic = %w(
-  chefignore
-  Gemfile
-  LICENSE
-  recipes/default.rb
-  attributes/default.rb
-  .delivery/build_cookbook/data_bags/keys/delivery_builder_keys.json
-  .delivery/build_cookbook/recipes/default.rb
-  .delivery/build_cookbook/recipes/deploy.rb
-  .delivery/build_cookbook/recipes/functional.rb
-  .delivery/build_cookbook/recipes/lint.rb
-  .delivery/build_cookbook/recipes/provision.rb
-  .delivery/build_cookbook/recipes/publish.rb
-  .delivery/build_cookbook/recipes/quality.rb
-  .delivery/build_cookbook/recipes/security.rb
-  .delivery/build_cookbook/recipes/smoke.rb
-  .delivery/build_cookbook/recipes/syntax.rb
-  .delivery/build_cookbook/recipes/unit.rb
-  .delivery/build_cookbook/secrets/fakey-mcfakerton
-  .delivery/build_cookbook/.kitchen.yml
-  .delivery/build_cookbook/Berksfile
-  .delivery/build_cookbook/chefignore
-  .delivery/build_cookbook/LICENSE
-  .delivery/build_cookbook/metadata.rb
-  .delivery/build_cookbook/README.md
-)
-files_basic.each do |file|
-  cookbook_file File.join(cookbook_dir, file) do
-    source file
-    action :create_if_missing
-  end
-end
-
-# Create basic files from template
-files_template = %w(
-  metadata.rb
-  README.md
-  CHANGELOG.md
-  .kitchen.yml
-  Berksfile
-)
-files_template.each do |file|
-  template File.join(cookbook_dir, file) do
-    helpers(ChefDK::Generator::TemplateHelper)
-    action :create_if_missing
-  end
-end
-
-
-
-# Create more complex files from templates
-template "#{cookbook_dir}/attributes/default.rb" do
-  source 'default_attributes.rb.erb'
-  helpers(ChefDK::Generator::TemplateHelper)
-  action :create_if_missing
-  variables(
-    attribute_context: attribute_context)
-end
-template "#{cookbook_dir}/recipes/default.rb" do
-  source 'default_recipe.rb.erb'
-  helpers(ChefDK::Generator::TemplateHelper)
-  action :create_if_missing
-end
-template "#{cookbook_dir}/.delivery/config.json" do
-  source 'custom_config.json.erb'
-  helpers(ChefDK::Generator::TemplateHelper)
-  action :create_if_missing
-end
-template "#{cookbook_dir}/test/integration/default/metadata.rb" do
-  source 'test_metadata.rb.erb'
-  helpers(ChefDK::Generator::TemplateHelper)
-  action :create_if_missing
-end
-
-# git
-if context.have_git
-  unless context.skip_git_init
-
-    execute('initialize-git') do
-      command('git init .')
-      cwd cookbook_dir
+  # Create cookbook directories
+  cookbook_directories = [
+    'attributes',
+    'recipes',
+    'templates/default',
+    'test/integration/default',
+    '.delivery/build_cookbook',
+    '.delivery/build_cookbook/data_bags/keys',
+    '.delivery/build_cookbook/recipes',
+    '.delivery/build_cookbook/secrets'
+  ]
+  cookbook_directories.each do |dir|
+    directory File.join(cookbook_dir, dir) do
+      recursive true
     end
   end
 
-  cookbook_file "#{cookbook_dir}/.gitignore" do
-    source 'gitignore'
+  # Create basic files
+  files_basic = %w(
+    chefignore
+    Gemfile
+    LICENSE
+    recipes/default.rb
+    attributes/default.rb
+    .delivery/build_cookbook/data_bags/keys/delivery_builder_keys.json
+    .delivery/build_cookbook/recipes/default.rb
+    .delivery/build_cookbook/recipes/deploy.rb
+    .delivery/build_cookbook/recipes/functional.rb
+    .delivery/build_cookbook/recipes/lint.rb
+    .delivery/build_cookbook/recipes/provision.rb
+    .delivery/build_cookbook/recipes/publish.rb
+    .delivery/build_cookbook/recipes/quality.rb
+    .delivery/build_cookbook/recipes/security.rb
+    .delivery/build_cookbook/recipes/smoke.rb
+    .delivery/build_cookbook/recipes/syntax.rb
+    .delivery/build_cookbook/recipes/unit.rb
+    .delivery/build_cookbook/secrets/fakey-mcfakerton
+    .delivery/build_cookbook/.kitchen.yml
+    .delivery/build_cookbook/Berksfile
+    .delivery/build_cookbook/chefignore
+    .delivery/build_cookbook/LICENSE
+    .delivery/build_cookbook/metadata.rb
+    .delivery/build_cookbook/README.md
+  )
+  files_basic.each do |file|
+    cookbook_file File.join(cookbook_dir, file) do
+      source file
+      action :create_if_missing
+    end
   end
-end
+
+  # Create basic files from template
+  files_template = %w(
+    metadata.rb
+    README.md
+    CHANGELOG.md
+    .kitchen.yml
+    Berksfile
+  )
+  files_template.each do |file|
+    template File.join(cookbook_dir, file) do
+      helpers(ChefDK::Generator::TemplateHelper)
+      action :create_if_missing
+    end
+  end
+
+
+
+  # Create more complex files from templates
+  template "#{cookbook_dir}/attributes/default.rb" do
+    source 'default_attributes.rb.erb'
+    helpers(ChefDK::Generator::TemplateHelper)
+    action :create_if_missing
+    variables(
+      attribute_context: attribute_context)
+  end
+  template "#{cookbook_dir}/recipes/default.rb" do
+    source 'default_recipe.rb.erb'
+    helpers(ChefDK::Generator::TemplateHelper)
+    action :create_if_missing
+  end
+  template "#{cookbook_dir}/.delivery/config.json" do
+    source 'custom_config.json.erb'
+    helpers(ChefDK::Generator::TemplateHelper)
+    action :create_if_missing
+  end
+  template "#{cookbook_dir}/test/integration/default/metadata.rb" do
+    source 'test_metadata.rb.erb'
+    helpers(ChefDK::Generator::TemplateHelper)
+    action :create_if_missing
+  end
+
+  # git
+  if context.have_git
+    unless context.skip_git_init
+
+      execute('initialize-git') do
+        command('git init .')
+        cwd cookbook_dir
+      end
+    end
+
+    cookbook_file "#{cookbook_dir}/.gitignore" do
+      source 'gitignore'
+    end
+  end
 ```
 
 ### Step 3:
