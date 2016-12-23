@@ -4,7 +4,7 @@ title: Creating a Custom Cookbook Generator that Doesn't Interfere with Workflow
 date: 2016-12-23 09:25:15
 tutorial-category: chef
 ---
-In this post, I plan to discuss how to create a custom cookbook generator using Pan by Echohack (<https://github.com/echohack/pan>). While there are a few tutorials out there on how to make it work for YOU, I found that getting it to work as intended all while still allowing `delivery init` commands to work properly required a few extra steps. The intent is to bring it all together into one place.
+In this post, I plan to discuss how to create a custom cookbook generator using <a href="https://github.com/echohack/pan">Pan by Echohack</a>. While there are a few tutorials out there on how to make it work for YOU, I found that getting it to work as intended all while still allowing `delivery init` commands to work properly required a few extra steps. The intent is to bring it all together into one place.
 
 Before I get started, one walkthrough I found particularly helpful came from Chef's own <a href="https://gist.github.com/andy-dufour/3eb74ccdcd29e4c4afd1">Andy Dufour</a>. Follow his steps to get started with a basic cookbook generator.
 
