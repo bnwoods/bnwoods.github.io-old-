@@ -11,7 +11,7 @@ I have put mine in my .delivery directory that houses my cli.toml. You can liter
 
 ##### Modify your cli.toml
 You will need to modify your cli.toml to point to your new config.json file. Mine looks something like this:
-```
+``` toml
   api_protocol = "https"
   enterprise = "enterprise-name"
   git_port = "8989"
