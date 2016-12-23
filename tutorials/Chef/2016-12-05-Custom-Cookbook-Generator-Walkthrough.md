@@ -4,9 +4,9 @@ title: Creating a Custom Cookbook Generator that Doesn't Interfere with Workflow
 date: 2016-12-23 09:25:15
 tutorial-category: chef
 ---
-In this post, I plan to discuss how to create a custom cookbook generator using <a href="https://github.com/echohack/pan">Pan by Echohack</a>. While there are a few tutorials out there on how to make it work for YOU, I found that getting it to work as intended all while still allowing `delivery init` commands to work properly required a few extra steps. The intent is to bring it all together into one place.
+In this post, I plan to discuss how to create a custom cookbook generator using <a href="https://github.com/echohack/pan" target="_blank">Pan by Echohack</a>. While there are a few tutorials out there on how to make it work for YOU, I found that getting it to work as intended all while still allowing `delivery init` commands to work properly required a few extra steps. The intent is to bring it all together into one place.
 
-Before I get started, one walkthrough I found particularly helpful came from Chef's own <a href="https://gist.github.com/andy-dufour/3eb74ccdcd29e4c4afd1">Andy Dufour</a>. Follow his steps to get started with a basic cookbook generator.
+Before I get started, one walkthrough I found particularly helpful came from Chef's own <a href="https://gist.github.com/andy-dufour/3eb74ccdcd29e4c4afd1" target="_blank">Andy Dufour</a>. Follow his steps to get started with a basic cookbook generator.
 
 ## What should I do to make it work with workflow?
 To use this and still be able to use delivery init, you'll want to add in either your custom build cookbook or the default skeleton build cookbook in the generated cookbook. Why? Because without it, `delivery init` will attempt to generate a skeleton build cookbook -- which with the generator does not exist. Since we're pointing to the generator specifically in our knife.rb, it attempts to utilize it instead of the inbuilt one for generating the build cookbook skeleton.
