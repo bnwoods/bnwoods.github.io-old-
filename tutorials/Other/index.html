@@ -1,16 +1,16 @@
 ---
 layout: default
-title: Testing
-permalink: /testing/
+title: Other Things
+permalink: /otherthings/
 ---
 
 <section id="one" >
     <div class="container">
       <header class="major">
-        <h2>Tutorials: Chef Things</h2>
+        <h2>Tutorials: Other Things</h2>
       </header>
-      {% assign testingPages = site.pages | where:"tutorial-category", "testing" %}
-      {% for page in testingPages %}
+      {% assign otherPages = site.pages | where:"tutorial-category", "otherthings" %}
+      {% for page in otherPages %}
       <article>
         <header>
           <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
