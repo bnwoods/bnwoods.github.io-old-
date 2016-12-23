@@ -13,6 +13,7 @@ To use this and still be able to use delivery init, you'll want to add in either
 
 ### Step 1:
 Under `flavor_cookbooks/[yourcustomname]_base` you will need to add the following /directories/files if you're simply using a cookbook skeleton:
+
 ``` bash
 ├── flavor_cookbooks
 │   └── saucepan_base
@@ -52,10 +53,12 @@ Under `flavor_cookbooks/[yourcustomname]_base` you will need to add the followin
 │       │   │   └── config.json
 ```
 
+
 For me, I am generating a skeleton build cookbook because I'm utilizing a custom config.json to call a custom build cookbook that is stored in version control. As long as this cookbook is called build_cookbook, `delivery init` will recognize that a build cookbook already exists and will not fail due to your generator.
 
 ### Step 2:
 Next, you will need to update your cookbook.rb under `flavor_cookbooks/saucepan_base/recipes/cookbook.rb` to include all the files we've just added. Mine looks something like this (you will of course need to modify to fit your needs):
+
 ``` ruby
 context = ChefDK::Generator.context
 cookbook_dir = File.join(context.cookbook_root, context.cookbook_name)
@@ -168,6 +171,7 @@ if context.have_git
   end
 end
 ```
+
 ### Step 3:
 If you haven't already, you will need to bump the version in your .gemspec file. Then, you will simply build and install (if you've already done this with the other tutorial, you'll need to do it again). Commands are as follows:
 
