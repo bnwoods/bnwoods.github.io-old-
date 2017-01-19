@@ -15,7 +15,7 @@ Because I like cats I am going to look at containers like cats. Cats are very in
 But why is this relevant? This means something because since containers are so self-contained, it takes the guesswork out of ensuring applications run reliably across multiple environments (i.e Dev, Test, and Production). As I said before, all the container "uses" the host for is the OS/Kernel. It sits on top of the host. The cat sits on top of it's human for the occasional expression of love. See where I'm going here?
 
 Now, all of this leads us to our next question...
-#### *Why use a container and not a virtual machine?*
+#### Why use a container and not a virtual machine?
 
 There are many reasons to use a container instead of a virtual machine. All of which are extremely dependent on specific use cases. While I can't give you advice on which to use because I'm still working out the basics -- <a href="https://blog.docker.com/2016/05/vm-or-containers/" target="_blank">this guy probably can</a>
 
