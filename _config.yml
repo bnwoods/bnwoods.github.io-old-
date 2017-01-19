@@ -21,7 +21,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://brittanynwoods.com" # the base hostname & protocol for your site
 twitter_username: bnwoods2008
 github_username:  bnwoods
-
+gems:
+  - jekyll-seo-tag
 # Build settings
 markdown: kramdown
 theme: minima
