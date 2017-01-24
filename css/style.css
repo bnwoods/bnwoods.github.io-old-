@@ -195,7 +195,7 @@
 	}
 
 	header.major h2 {
-		color: #778fb2;
+		color: #555b66;
 		font-size: 3.5em;
 	}
 
@@ -562,7 +562,7 @@
 				}
 
 				ul.feature-icons li:before {
-					background: #778fb2;
+					background: #555b66;
 					border-radius: 100%;
 					color: #ffffff;
 					display: block;
@@ -851,7 +851,7 @@
 		input[type="reset"].special,
 		input[type="button"].special,
 		.button.special {
-			background-color: #778fb2;
+			background-color: ##555b66;
 			color: #ffffff !important;
 		}
 
@@ -859,14 +859,14 @@
 			input[type="reset"].special:hover,
 			input[type="button"].special:hover,
 			.button.special:hover {
-				background-color: #6b85ad;
+				background-color: #555b66;
 			}
 
 			input[type="submit"].special:active,
 			input[type="reset"].special:active,
 			input[type="button"].special:active,
 			.button.special:active {
-				background-color: #6b85ad;
+				background-color: #555b66;
 			}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
@@ -932,8 +932,8 @@
 /* Header */
 
 	#header {
-		background: #778fb2;
-		color: #7c94b7;
+		background: #555b66;
+		color: #555b66;
 		height: 100%;
 		position: fixed;
 		text-align: center;
@@ -951,7 +951,7 @@
 			}
 
 		#header header p {
-			color: #7c94b7;
+			color: ##555b66;
 		}
 
 		#header a {
@@ -978,7 +978,7 @@
 			}
 
 			#header > header p {
-				color: #d1f1e9;
+				color: #dfe0e2;
 				font-style: italic;
 				margin: 1em 0 0 0;
 			}
@@ -996,7 +996,7 @@
 			}
 
 				#header > footer .icons li a {
-					color: #b6e9dc;
+					color: #d6d8d8;
 				}
 
 		#header > nav ul {
@@ -1006,7 +1006,7 @@
 		}
 
 			#header > nav ul li {
-				border-top: solid 2px #8699b7;
+				border-top: solid 2px #dfe0e2;
 				display: block;
 				padding: 0;
 			}
@@ -1018,7 +1018,7 @@
 					-ms-transition: none;
 					transition: none;
 					border: 0;
-					color: #ffffff !important;
+					color: #e2dede !important;
 					display: block;
 					padding: 0.85em 0;
 					text-decoration: none;
