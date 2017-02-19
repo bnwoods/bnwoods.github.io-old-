@@ -7,7 +7,7 @@ categories: chefconf
 ---
 I have officially registered for ChefConf!
 
--<img src="{{ site.baseurl }}/images/happy-dance.gif" style="width: 50%; height: 50%;">
+<img src="{{ site.baseurl }}/images/happy-dance.gif" style="width: 50%; height: 50%;">
 
 One thing I am most excited for, other than seeing my ChefFriends, is the Monday workshop. Last year, I decided to take the workshop on Compliance as my exposure to that was very limited at the time. This year, things have changed..
 
