@@ -1,7 +1,6 @@
 ---
 layout: tutorial
 title: Pulling in a Custom Config for Workflow
-date: 2016-12-23 09:52:00
 tutorial-category: chef
 ---
 This one is alarmingly simple, so it will be really short. Do you have a custom config for delivery to pull in custom build cookbooks from version control? Do you skip certain phases? If so, here is an easy solution to pull in your customized file every time you run `delivery init`.
