@@ -141,7 +141,7 @@ end
 
 We of course added in more to our resource, namly an `:action delete` but the point of my post is to illustrate how easy this is! I'm guilty sometimes of looking at documetnation and gettig entirely overwhelmed. I often have to put myself in the appropriate headspace to get more difficult concepts. This concept though was delightfully easy. I would recommend everyone brush up on this as I can see how useful it can actually be. 
 
-Another great thing about Chef is that many of their training materials are available online. If you would like to go through this in full, the slide deck can be found at <a href="https://github.com/chef-training/extending_cookbooks" target="_blank"></a> and the example httpd cookbook to get started with can be found at <a href="https://github.com/chef-training/extending_cookbooks-repo" target="_blank"></a>. 
+Another great thing about Chef is that many of their training materials are available online. If you would like to go through this in full, the slide deck can be found at <a href="https://github.com/chef-training/extending_cookbooks" target="_blank">https://github.com/chef-training/extending_cookbooks</a> and the example httpd cookbook to get started with can be found at <a href="https://github.com/chef-training/extending_cookbooks-repo" target="_blank">https://github.com/chef-training/extending_cookbooks-repo</a>. 
 
 My next post will be more focussed on the many sessions I attending and the taking of my first Certification test. 
 
