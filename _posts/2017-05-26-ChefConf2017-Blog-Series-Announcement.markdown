@@ -98,7 +98,7 @@ service 'httpd' do
 end
 ```
 
-We of course added in more to our resource, namly an `:action delete` but the point of my post is to illistrate how easy this is! I'm guilty sometimes of looking at documetnation and gettig entirely overwhelmed. I often have to put myself in the appropriate headspace to get more difficult concepts. This concept though was delightfully easy. I would recommend everyone brush up on this as I can see how useful it can actually be. 
+We of course added in more to our resource, namly an `:action delete` but the point of my post is to illustrate how easy this is! I'm guilty sometimes of looking at documetnation and gettig entirely overwhelmed. I often have to put myself in the appropriate headspace to get more difficult concepts. This concept though was delightfully easy. I would recommend everyone brush up on this as I can see how useful it can actually be. 
 
 Another great thing about Chef is that many of their training materials are available online. If you would like to go through this in full, the slide deck can be found at https://github.com/chef-training/extending_cookbooks and the example httpd cookbook to get started with can be found at https://github.com/chef-training/extending_cookbooks-repo . 
 
