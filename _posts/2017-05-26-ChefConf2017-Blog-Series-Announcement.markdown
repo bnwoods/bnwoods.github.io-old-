@@ -80,7 +80,7 @@ action :create do
 end
 ```
 
-Looks pretty familiar right? Essentially, we moved the logic from our default.rb recipe and placed it in a custom resource. That info was then removed from our default.rb recipe and instead replaced with calls to our custom resource. Our final default.rb recipe is below: 
+Looks pretty familiar right? Essentially, we moved the logic from our default.rb recipe and placed it in a custom resource. That info was then removed from our default.rb recipe and instead replaced with calls to our custom resource. Our default.rb recipe at this point  is below: 
 
 ``` ruby
 package 'httpd'
@@ -97,10 +97,51 @@ service 'httpd' do
   action [:enable, :start]
 end
 ```
+Next, we made our resource accept custom parameters. To do this, we simply added in site_name, which would allow us to use this across multiple sites. In vhost.rb, we added a line at the top to accept a string, and also replaced values in the custom resource to replace with that variable. See below: 
+
+``` ruby
+property :site_name, String
+
+action :create do
+  directory "/srv/apache/#{site_name}/html" do
+    recursive true
+    mode '0755'
+  end
+
+  template "/etc/httpd/conf.d/#{site_name}.conf" do
+    source 'conf.erb'
+    mode '0644'
+    variables(document_root: "/srv/apache/#{site_name}/html", port: 8080)
+    notifies :restart, "service[httpd]"
+  end
+
+  file "/srv/apache/#{site_name}/html/index.html" do
+    content "<h1>Welcome #{site_name}!</h1>"
+  end
+end
+```
+Adding this in, we then updated our default recipe: 
+
+``` ruby
+package 'httpd'
+
+file '/var/www/html/index.html' do
+  content '<h1>Welcome home!</h1>'
+end
+
+httpd_vhost 'admins' do
+  site_name 'admins'
+  action :create
+end
+
+service 'httpd' do
+  action [:enable, :start]
+end
+```
 
 We of course added in more to our resource, namly an `:action delete` but the point of my post is to illustrate how easy this is! I'm guilty sometimes of looking at documetnation and gettig entirely overwhelmed. I often have to put myself in the appropriate headspace to get more difficult concepts. This concept though was delightfully easy. I would recommend everyone brush up on this as I can see how useful it can actually be. 
 
-Another great thing about Chef is that many of their training materials are available online. If you would like to go through this in full, the slide deck can be found at https://github.com/chef-training/extending_cookbooks and the example httpd cookbook to get started with can be found at https://github.com/chef-training/extending_cookbooks-repo . 
+Another great thing about Chef is that many of their training materials are available online. If you would like to go through this in full, the slide deck can be found at <a href="https://github.com/chef-training/extending_cookbooks" target="_blank"></a> and the example httpd cookbook to get started with can be found at <a href="https://github.com/chef-training/extending_cookbooks-repo" target="_blank"></a>. 
 
 My next post will be more focussed on the many sessions I attending and the taking of my first Certification test. 
 
