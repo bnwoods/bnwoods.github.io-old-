@@ -143,6 +143,6 @@ We of course added in more to our resource, namly an `:action delete` but the po
 
 Another great thing about Chef is that many of their training materials are available online. If you would like to go through this in full, the slide deck can be found at <a href="https://github.com/chef-training/extending_cookbooks" target="_blank">https://github.com/chef-training/extending_cookbooks</a> and the example httpd cookbook to get started with can be found at <a href="https://github.com/chef-training/extending_cookbooks-repo" target="_blank">https://github.com/chef-training/extending_cookbooks-repo</a>. 
 
-My next post will be more focussed on the many sessions I attending and the taking of my first Certification test. 
+My next post will be more focused on the many sessions I attended and the taking of my first Certification test. 
 
 Cheers!
