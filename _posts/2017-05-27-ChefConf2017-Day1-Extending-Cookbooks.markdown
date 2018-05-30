@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  ChefConf Day 1 - Extending Cookbooks
+title:  ChefConf 2017 Day 1 - Extending Cookbooks
 description: Pre-Conference Workshop -- Extending Cookbooks with Custom Resources and Ohai Plugins
 date:   2017-05-27 14:22:00
 categories: chefThings
